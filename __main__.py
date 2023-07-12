@@ -11,6 +11,8 @@ parser.add_argument("--params", help="dictionary of parameters for the algorithm
 
 args=parser.parse_args()
 
+print(args)
+print(args.params)
 params = json.loads(args.params, parse_float=float, parse_int=int)
 
 g = nx.read_edgelist("network.csv", delimiter=",")
