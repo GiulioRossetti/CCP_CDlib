@@ -12,7 +12,7 @@ parser.add_argument("--alg", help="Community detection algorithm")
 args=parser.parse_args()
 
 print(args)
-params = json.loads(open("params.json"))
+params = json.load(open("params.json"))
 print(params)
 
 g = nx.read_edgelist("network.csv", delimiter=",")
