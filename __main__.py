@@ -13,9 +13,8 @@ args=parser.parse_args()
 
 params = json.loads(args.params, parse_float=float, parse_int=int)
 
-print(f"Params: {params}, type: {type(params)}")
+g = nx.read_edgelist("network.csv", delimiter=",")
 
-g = nx.read_edgelist("network.csv")
 alg = getattr(al, args.alg)
 coms = alg(g, **params)
 io.write_community_json(coms, "communities.json")
