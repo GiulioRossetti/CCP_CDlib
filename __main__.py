@@ -1,7 +1,7 @@
 import networkx as nx
 from cdlib import algorithms as al
 from cdlib import readwrite as io
-import ast, argparse, sys
+import argparse, sys, json
 
 parser=argparse.ArgumentParser()
 
@@ -13,7 +13,7 @@ args=parser.parse_args()
 
 print(args)
 print(args.params)
-params = ast.literal_eval(args.params)
+params = json.loads(args.params, parse_float=float, parse_int=int)
 
 g = nx.read_edgelist("network.csv", delimiter=",")
 
