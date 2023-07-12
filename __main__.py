@@ -10,10 +10,7 @@ parser.add_argument("--alg", help="Community detection algorithm")
 #parser.add_argument("--params", help="dictionary of parameters for the algorithm", default="{}")
 
 args=parser.parse_args()
-
-print(args)
-params = json.load(open("/ccp_data/params.json"))
-print(params)
+params = json.load(open("params.json"))
 
 g = nx.read_edgelist("network.csv", delimiter=",")
 
