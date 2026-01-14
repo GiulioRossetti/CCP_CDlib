@@ -1,1 +1,3 @@
 cdlib
+leidenalg
+infomap>=1.3.0
